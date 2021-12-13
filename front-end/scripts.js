@@ -8,7 +8,7 @@ const getFilmes = async () => {
     const filmes = await response.json();
     
     filmes.map((filme) =>{
-        console.log(filme);
+        console.log(filmes);
         lista.insertAdjacentHTML('beforeend', 
         <tr>
             <th scope="row"> ${filme.id}</th>
