@@ -5,15 +5,17 @@ const lista = document.getElementById('lista');
 
 const getFilmes = async () => {
     const response = await fetch('${url}/filmes');
-    const vagas = await response.json();
-    filmes.map((listafilmes) =>{
-        console.log(filmes);
+    const filmes = await response.json();
+    
+    filmes.map((filme) =>{
+        console.log(filme);
         lista.insertAdjacentHTML('beforeend', 
         <tr>
-            <td>${listafilmes.id}</td>
-            <td>${listafilmes.Filme}</td>
-            <td>${listafilmes.Ano}</td>
-            <td>${listafilmes.Produtora}</td>
+            <th scope="row"> ${filme.id}</th>
+            <td>${filme.id}</td>
+            <td>${filme.Filme}</td>
+            <td>${filme.Ano}</td>
+            <td>${filme.Produtora}</td>
         </tr>
         )
     })
@@ -29,10 +31,10 @@ const escolherFilme = async () => {
     
     document.getElementById('filme').insertAdjacentHTML('beforeend',
     <tr>
-            <td>${listafilmes.id}</td>
-            <td>${listafilmes.Filme}</td>
-            <td>${listafilmes.Ano}</td>
-            <td>${listafilmes.Produtora}</td>
+            <td>${filme.id}</td>
+            <td>${filme.Filme}</td>
+            <td>${filme.Ano}</td>
+            <td>${filme.Produtora}</td>
         </tr>
     )
 }
